@@ -12,7 +12,7 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 // What states the machine can be in
-enum State {
+export enum State {
   NO_COIN = 'NO_COIN',
   INVALID_COIN = 'INVALID_COIN',
   VALID_COIN = 'VALID_COIN',
@@ -21,7 +21,7 @@ enum State {
 }
 
 // What types of event can be sent to the machine
-enum Event {
+export enum Event {
   HALF_TURN = 'HALF_TURN',
   ADD_COIN = 'ADD_COIN',
   REMOVE_COIN = 'REMOVE_COIN',

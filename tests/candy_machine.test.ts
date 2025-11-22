@@ -1,6 +1,11 @@
-// import { Statechart } from '../src/candy_machine';
+import { Statechart as candyMachine, Event, State } from '../src/candy_machine';
 
-// TODO write some basic tests
-test('Stub', () => {
-  expect(1).toBe(1);
+test('NO_COIN + HALF_TURN = SLOT_CLOSED', () => {
+  const newState = candyMachine.transition(State.NO_COIN, { type: Event.HALF_TURN });
+  expect(newState.matches(State.SLOT_CLOSED)).toBe(true);
+  expect(newState.context).toMatchObject({
+    currentCoinValue: 0,
+    totalValue: 0,
+    numSales: 0,
+  });
 });

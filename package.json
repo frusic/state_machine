@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Simple state machine in Javascript using xstate library",
   "main": "dist/index.js",
+  "files": ["./dist"],
   "scripts": {
     "lint": "eslint . --parser @typescript-eslint/parser && tsc --noEmit",
     "test": "jest",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "prepare": "husky install",
-    "start": "ts-node src/index.ts"
+    "start": "npm run build && ts-node src/index.ts"
   },
   "author": "frUSIc",
   "license": "ISC",
